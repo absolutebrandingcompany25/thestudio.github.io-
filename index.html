@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zxx" class="is-preload">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+	<!-- favicon  -->
+	<link rel="shortcut icon" href="img/ui/logo.ico" type="image/x-icon">
+	<!-- swiper css -->
+	<link rel="stylesheet" href="css/plugins/swiper.min.css">
+	<!-- fancybox css -->
+	<link rel="stylesheet" href="css/plugins/fancybox.min.css">
+	<!-- orabel css -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- page title -->
+	<title>The Studio 130</title>
+</head>
+
+<body>
+	<!-- Pantalla de carga -->
+	<div class="loading-screen">
+		<div class="intro-screen">
+			<div class="intro-door"><img src="img/photo/Group.svg" alt="Puerta"></div>
+			<div class="intro-title">
+				<div class="png-title">
+					<img src="img\photo\Vector1.png" alt="S" />
+					<img src="img\photo\Vector2.png" alt="T" />
+					<img src="img\photo\Vector3.png" alt="U" />
+					<img src="img\photo\Vector4.png" alt="D" />
+					<img src="img\photo\Vector5.png" alt="I" />
+					<img src="img\photo\Vector6.png" alt="O" />
+					<span class="number">
+						<img id="Uno" src="img\photo\Vector7.png" alt="1" />
+						<img id="Tres" src="img\photo\Vector8.png" alt="3" />
+						<img id="Cero" src="img\photo\Vector9.png" alt="0" />
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Pantalla de carga fin -->
+	<div class="PaginaInicio">
+		<!-- Video Background -->
+		<video autoplay muted loop id="bg-video">
+			<source src="Video\Intro.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		<!-- Overlay for darkening the video -->
+
+		<!-- Navigation -->
+        <header>
+			<div class="header-container">
+				<div class="header-logo" data-svg-wrapper></div>
+					<a href="index.html"><img id="logo" src="img\ui\Group 4.svg" alt="logo" data-svg-wrapper/></a>
+				</div>
+				<div class="header-menu">
+					<ul class="menu-list">
+						<li><a id="btnInicio" href="index.html" data-property-1="Default">Inicio</a></li>
+						<li><a id="btnestudio" data-property-1="Default" href="nosotros.html">El estudio</a></li>
+						<li><a id="btnfotografia" href="fotografia.html" data-property-1="Default">Fotografía</a></li>
+						<li><a id="btnaudiovisual" href="audiovisual.html" data-property-1="Default">Audiovisual</a></li>
+						<li><a id="btnContacto" href="contacto.html" data-has-icon-end="false" data-has-icon-start="false" data-size="Medium" data-state="Default" data-variant="Neutral">¡Hablemos!</a>
+					    <li>
+							<a id="btnRedes" href="#"data-svg-wrapper>
+								<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.35617 14.7218C6.34534 14.7218 5.39277 14.5291 4.49845 14.1437C3.60426 13.7582 2.82368 13.232 2.1567 12.5651C1.48985 11.8982 0.963656 11.1176 0.578114 10.2234C0.192705 9.32907 0 8.37649 0 7.36567C0 6.34455 0.192705 5.38868 0.578114 4.49805C0.963656 3.60743 1.48985 2.82816 2.1567 2.16026C2.82368 1.49222 3.60426 0.965174 4.49845 0.579104C5.39277 0.193035 6.34534 0 7.35617 0C8.37729 0 9.33316 0.1931 10.2238 0.579301C11.1144 0.965503 11.8937 1.49269 12.5616 2.16085C13.2296 2.82889 13.7567 3.60835 14.1427 4.49924C14.5288 5.39 14.7218 6.34389 14.7218 7.36092C14.7218 8.37491 14.5288 9.32907 14.1427 10.2234C13.7567 11.1176 13.2296 11.8982 12.5616 12.5651C11.8937 13.232 11.1144 13.7582 10.2238 14.1437C9.33316 14.5291 8.37729 14.7218 7.35617 14.7218ZM7.36092 13.6456C7.77298 13.1043 8.11867 12.5555 8.398 11.9991C8.67746 11.4428 8.90519 10.8394 9.08121 10.1888H5.64439C5.82555 10.8622 6.05454 11.4758 6.33136 12.0296C6.60831 12.5833 6.95149 13.122 7.36092 13.6456ZM5.92384 13.4118C5.60968 12.9591 5.32811 12.4544 5.07914 11.8978C4.83029 11.3411 4.63824 10.7714 4.503 10.1888H1.80322C2.22135 11.0282 2.7868 11.7259 3.49956 12.2819C4.21233 12.8378 5.02042 13.2144 5.92384 13.4118ZM8.79799 13.4118C9.69877 13.2169 10.5062 12.8409 11.2203 12.2837C11.9344 11.7265 12.5017 11.0282 12.9224 10.1888H10.2226C10.0595 10.7764 9.85348 11.3487 9.6045 11.9055C9.35565 12.4622 9.08682 12.9643 8.79799 13.4118ZM1.35335 9.08121H4.27045C4.22071 8.78288 4.18468 8.49175 4.16239 8.2078C4.13996 7.92386 4.12874 7.64156 4.12874 7.36092C4.12874 7.08027 4.13996 6.79798 4.16239 6.51403C4.18468 6.23009 4.22071 5.93895 4.27045 5.64062H1.35335C1.27063 5.91612 1.20901 6.19796 1.1685 6.48612C1.12786 6.77429 1.10754 7.06589 1.10754 7.36092C1.10754 7.65594 1.12786 7.94754 1.1685 8.23571C1.20901 8.52388 1.27063 8.80571 1.35335 9.08121ZM5.38789 9.08121H9.33791C9.3891 8.78288 9.42651 8.49537 9.45012 8.21869C9.47374 7.94187 9.48555 7.65594 9.48555 7.36092C9.48555 7.06589 9.47374 6.77997 9.45012 6.50315C9.42651 6.22646 9.3891 5.93895 9.33791 5.64062H5.38789C5.33405 5.93895 5.29533 6.22646 5.27171 6.50315C5.24809 6.77997 5.23628 7.06589 5.23628 7.36092C5.23628 7.65594 5.24809 7.94187 5.27171 8.21869C5.29533 8.49537 5.33405 8.78288 5.38789 9.08121ZM10.4514 9.08121H13.3722C13.4525 8.80571 13.5128 8.52388 13.5533 8.23571C13.594 7.94754 13.6143 7.65594 13.6143 7.36092C13.6143 7.06589 13.594 6.77429 13.5533 6.48612C13.5128 6.19796 13.4525 5.91612 13.3722 5.64062H10.4514C10.5011 5.93895 10.5371 6.23009 10.5594 6.51403C10.5819 6.79798 10.5931 7.08027 10.5931 7.36092C10.5931 7.64156 10.5819 7.92386 10.5594 8.2078C10.5371 8.49175 10.5011 8.78288 10.4514 9.08121ZM10.2226 4.53308H12.9224C12.4991 3.686 11.9368 2.98828 11.2355 2.43992C10.5341 1.89169 9.7216 1.51248 8.79799 1.30229C9.11215 1.78033 9.39181 2.29392 9.63696 2.84307C9.88211 3.39223 10.0773 3.95556 10.2226 4.53308ZM5.64439 4.53308H9.08121C8.89754 3.86716 8.66347 3.25039 8.379 2.68276C8.09453 2.115 7.75517 1.57951 7.36092 1.07627C6.96667 1.57951 6.62731 2.115 6.34283 2.68276C6.05836 3.25039 5.82555 3.86716 5.64439 4.53308ZM1.80322 4.53308H4.503C4.64576 3.95556 4.83972 3.39223 5.08488 2.84307C5.33003 2.29392 5.60968 1.78033 5.92384 1.30229C4.99759 1.51499 4.18442 1.89551 3.48432 2.44387C2.78436 2.99224 2.22399 3.68864 1.80322 4.53308Z" fill="#EDF2F4"/>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+		</header>
+		<!-- Main Content -->
+		<div class="content">
+			<h1>Tu historia en</h1>
+			<div class="leyenda">
+				<p>Explora nuestro trabajo de<br><a href="#">Fotografía</a> y <a href="#">Video</a> con un enfoque<br>cinematográfico y atemporal.</p>
+			</div>
+			<div class="text-box">Vigo, España</div>
+		</div>
+		<footer>
+			The 130 Studio 2025. Todos los derechos reservados.
+		</footer>
+	</div>
+	<!-- jquery js -->
+	<script src="js/plugins/jquery.min.js"></script>
+	<!-- fancybox js -->
+	<script src="js/plugins/fancybox.min.js"></script>
+	<!-- swup js -->
+	<script src="js/plugins/swup.min.js"></script>
+	<!-- swiper js -->
+	<script src="js/plugins/swiper.min.js"></script>
+	<!-- parsley js -->
+	<script src="js/plugins/parsley.min.js"></script>
+	<!-- orabel js -->
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>

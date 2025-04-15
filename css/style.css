@@ -1,0 +1,668 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+body {
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+/* Video Background */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%); 
+    z-index: -2;
+}
+
+/* Pantalla de carga en pantalla completa */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #020205;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+/* "Puerta" rectangular */
+.door {
+    width: 95px;
+    height: 170px;
+    background: linear-gradient(to right, #444 49%, #555 51%);
+}
+
+/* Carrusel interno */
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.carousel img.active {
+    opacity: 1;
+}
+
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1A1A1D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.intro-door {
+    position: absolute;
+    left: calc(50% - 70px);
+    top: calc(50% - 110px);
+    transition: transform 1s ease;
+}
+
+.intro-door img {
+    width: 95px; 
+    height: 170px; 
+    border: 2px solid #888; 
+    border-radius: 2px;
+    display: block; 
+}
+
+.intro-door.slide-right {
+    transform: translateX(-280%);
+}
+
+.intro-title {
+    font-family: 'Titillium Web', sans-serif;
+    color: #e0e0e0;
+    font-size: 5rem;
+    letter-spacing: 4px;
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: relative;
+}
+
+.intro-title span {
+    font-size: 3rem;
+    vertical-align: super;
+    margin-left: 6px;
+    letter-spacing: 1px;
+}
+
+.intro-title.show {
+    opacity: 1;
+}
+
+.png-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    /* espacio entre letras */
+    background-color: #1A1A1D;
+    padding: 20px;
+}
+
+.png-title img {
+    height: 150px;
+    width: auto;
+    image-rendering: auto;
+    padding-left: 9px;
+    margin-bottom: 30px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) hue-rotate(200deg);
+}
+#Uno,
+#Tres,
+#Cero {
+    margin-bottom: 120px;
+    height: 50px;
+}
+
+ul li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+/* botones */
+header #logo {
+    left: 100px; 
+    top: 40px;
+    position: absolute;
+}
+header #btnInicio{
+    width: 83px;
+    height: 16px; 
+    left: 700px; 
+    top: 50px; 
+    position: absolute;
+}
+header #btnestudio{
+    width: 83px; 
+    height: 16px; 
+    left: 822px; 
+    top: 50px; 
+    position: absolute;
+}
+header #btnfotografia{
+    width: 83px; 
+    height: 16px; 
+    left: 956px; 
+    top: 50px;
+    position: absolute;
+}
+header #btnaudiovisual{
+    width: 90px;
+    height: 16px; 
+    left: 1090px; 
+    top: 50px; 
+    position: absolute; 
+}
+    
+header #btnContacto{
+    width: 131px; 
+    height: 31px; 
+    padding: 12px; 
+    left: 1650px; 
+    top: 44px; 
+    position: absolute; 
+    overflow: hidden; 
+    border-radius: 9999px; 
+    outline: 1px #EDF2F4 solid; 
+    outline-offset: -1px; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 8px; 
+    display: inline-flex;
+}
+#btnRedes{
+    left: 1790px;
+    top: 52px;
+    position: absolute; 
+    overflow: hidden; 
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Asegura que el video cubra el contenedor sin distorsión */
+    z-index: -1; /* Coloca el video en el fondo */
+    filter: grayscale(100%); 
+}
+
+.content h1 {
+    position: absolute;
+    width: 1907px;
+    height: 210px; 
+    left: 600px; 
+    top: 350px; 
+    background: linear-gradient(180deg, #FCDFC2, #C68646);
+    font-size: 140px; 
+    font-family: "Poppins", sans-serif; 
+    font-weight: 700; 
+    line-height: 210px; 
+    word-wrap: break-word;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.leyenda{
+    width: 437px;
+    height: 51px; 
+    left: 40%; 
+    top: 730px;
+    position: absolute; 
+    text-align: center; 
+    color: #EDF2F4; font-size: 20px; 
+    font-family: "Mulish", sans-serif; 
+    font-weight: 400; 
+    line-height: 23.20px;
+    word-wrap: break-word;
+}
+.text-box {
+    position: absolute;
+    margin-left: 67px;
+    bottom: -790px; 
+    left: 20px; 
+    background:transparent; 
+    color: white; 
+    padding: 5px 10px; 
+    font-size: 16px; 
+    transform: rotate(-90deg); 
+    transform-origin: bottom left; 
+    white-space: nowrap; 
+}
+/* Footer */
+footer {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    align-content: center;
+    text-align: center;
+    bottom: -920px;
+    left: 50%;
+    background-color:#020205;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+footer p {
+    font-size: 14px;
+    color: white;
+}
+.PaginaNosotros{
+    width: 100%;
+    height: 830px;
+}
+.PaginaNosotros .nuestrosdatos{
+    position: fixed;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 342px;
+    height: 158px;
+    align-content: center;
+    text-align: center;
+    background-color: #C68646;
+    color: #ffffff;
+    font-family: "Mulish", sans-serif; 
+    z-index: 1000; 
+}
+.PaginaNosotros .titulos {
+    display: flex;
+    flex-direction: row; /* Cambiado a columna para alinear correctamente */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 245px; /* Ajustado para dar más espacio */
+    gap: 20px;
+}
+.Nosotros{
+    overflow: visible;
+}
+.PaginaNosotros .titulos h1{
+    background: linear-gradient(180deg, #FCDFC2, #C68646);
+    font-size: 120px;
+    left: 500px;
+    font-family: "Poppins", sans-serif; 
+    font-weight: 700;
+    line-height: 180px;
+    word-wrap: break-word;
+    margin: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.PaginaNosotros .titulos h2 {
+    font-size: 24px; 
+    color: rgb(0, 0, 0); 
+    font-family: "Poppins", sans-serif; 
+    font-weight: 400px;
+    margin: 0;
+}
+.PaginaNosotros .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 20px; /* Elimina el padding para acercar el logo */
+}
+.PaginaNosotros #Volver{
+    width: 30px; 
+    height: 30px; 
+    padding: 12px; 
+    left: 1800px; 
+    top: 44px; 
+    position: absolute;
+    background-color: #BBC0C2;
+    overflow: hidden;
+    border: none;
+    border-radius: 9999px; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 8px; 
+    display: inline-flex;
+}
+.PaginaNosotros #Volver{
+    width: 30px; 
+    height: 30px; 
+    padding: 12px; 
+    left: 1800px; 
+    top: 44px; 
+    position: absolute;
+    background-color: #BBC0C2;
+    overflow: hidden;
+    border: none;
+    border-radius: 9999px; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 8px; 
+    display: inline-flex;
+}
+.PaginaNosotros #Volver a{
+    color: #020205;
+    font-weight: 700;
+}
+.PaginaNosotros #Volver:hover{
+    background-color: #C68646;
+    color: #020205;
+}
+.PaginaNosotros #abajo{
+    margin-left: 920px;
+    margin-top: 300px; 
+    color: #020205;
+    overflow: hidden;
+    border: none;
+    justify-content: center; 
+    align-items: center; 
+    gap: 8px; 
+    display: inline-flex;
+}
+.PaginaNosotros #abajo :hover{
+    background-color: #C68646;
+    color: #020205;
+}
+.Somos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 530px;
+    margin-top: 90px; /* Añade espacio adicional si es necesario */
+    background-color:#CCD1D7;
+    color: #020205;
+    font-family: "Poppins", sans-serif;
+    padding-top: 50px;
+    padding-left: 200px;
+    padding-bottom: 0;
+}
+.Somos .titulos{
+    width: 100%; 
+    height: 50%
+}
+.Somos .titulos #titulo1{
+    color: #020205; 
+    font-size: 36px; 
+    font-family: "Poppins", sans-serif; 
+    font-weight: 600; 
+    line-height: 31.68px; 
+    word-wrap: break-word;
+}
+.Somos .titulos #titulo2{
+    color: #020205; 
+    font-size: 96px; 
+    font-family: "Poppins", sans-serif;
+    font-weight: 900; 
+    line-height: 84.48px; 
+    word-wrap: break-word;
+}
+.Somos .parrafos{
+    margin-left: 493px;
+    width: 100%; 
+    height: 100%
+}
+.Somos #parrafo1{
+    color: #020205;
+    font-size: 36px; 
+    font-family: "Poppins", sans-serif;
+    font-weight: 400; 
+    line-height: 41.76px; 
+    word-wrap: break-word;
+}
+.Somos #parrafo2{
+    color: #C68346; 
+    font-size: 36px; 
+    font-family: "Poppins", sans-serif;
+    font-weight: 600; 
+    line-height: 41.76px; 
+    word-wrap: break-word;
+}
+.Somos .logo{
+    margin-top: -520px;
+    left: 0px;
+    width: 100%; 
+    height: 100%; 
+    position: relative;
+}
+
+.Somos2{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 530px;
+    background-color:#020205;
+}
+.Somos2 .verborea1{
+    width: 50%;
+    height: 100%;
+    background-color:#020205;
+    color: #EDF2F4;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    line-height: 27.84px;
+    word-wrap: break-word;
+    padding: 200px;
+}
+.Somos2 .verborea1 #parrafo4{
+    color:#C68346;
+    font-weight: 600;
+}
+.Somos2 .video1 {
+    width: 50%;
+    height: 100%;
+    background-color: #020205;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.Somos2 .video1 video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Somos3{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 530px;
+    background-color:#CCD1D7;
+}
+.Somos3 .verborea2{
+    width: 50%;
+    height: 100%;
+    background-color:#CCD1D7;
+    padding: 250px;
+    color: #020205;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    line-height: 27.84px;
+    word-wrap: break-word;
+    padding: 200px;
+}
+.Somos3 .video2 {
+    width: 50%;
+    height: 100%;
+    background-color: #020205;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.Somos3 .video2 video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Somos3 .verborea2 #parrafo5, #parrafo6{
+    color:#C68346;
+    font-weight: 600;
+}
+.PaginaContacto .datos {
+    position: fixed;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 342px;
+    height: 158px;
+    align-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+    backdrop-filter: blur(10px); /* Difumina el fondo detrás */
+    color: #ffffff;
+    font-family: "Mulish", sans-serif; 
+    z-index: 1000; 
+}
+.PaginaContacto #Volver{
+    width: 30px; 
+    height: 30px; 
+    padding: 12px; 
+    left: 1800px; 
+    top: 44px; 
+    position: absolute;
+    background-color: #BBC0C2;
+    overflow: hidden;
+    border: none;
+    border-radius: 9999px; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 8px; 
+    display: inline-flex;
+}
+.PaginaContacto #Volver a{
+    color: #020205;
+    font-weight: 700;
+}
+.PaginaContacto #Volver:hover{
+    background-color: #C68646;
+    color: #020205;
+}
+.PaginaContacto .titulos{
+    display: flex;
+    flex-direction: row; /* Cambiado a columna para alinear correctamente */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 245px; /* Ajustado para dar más espacio */
+    gap: 20px;
+}
+.PaginaContacto .titulos h1{
+    background: linear-gradient(180deg, #FCDFC2, #C68646);
+    font-size: 120px;
+    left: 500px;
+    font-family: "Poppins", sans-serif; 
+    font-weight: 700;
+    line-height: 180px;
+    word-wrap: break-word;
+    margin: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.PaginaContacto  .titulos h2 {
+    font-size: 30px; 
+    color: rgb(255, 255, 255); 
+    font-family: "Poppins", sans-serif; 
+    font-weight: 400px;
+    margin: 0;
+}
+.PaginaContacto  .logo {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 20px; /* Elimina el padding para acercar el logo */
+}
+.PaginaContacto p{
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px; 
+    font-family: "Poppins", sans-serif; 
+    font-weight: 400; 
+    line-height: 27.84px; 
+    word-wrap: break-word;
+}
+.PaginaContacto #abajo{
+    margin-left: 920px;
+    margin-top: 250px; 
+    color: #020205;
+    overflow: hidden;
+    border: none;
+    justify-content: center; 
+    align-items: center; 
+    gap: 8px; 
+    display: inline-flex;
+}
+.PaginaContacto #abajo{
+    margin-left: 920px;
+    margin-top: 250px; 
+    color: #020205;
+    overflow: hidden;
+    border: none;
+    justify-content: center; 
+    align-items: center; 
+    gap: 8px; 
+    display: inline-flex;
+}
+.PaginaContacto #abajo :hover{
+    background-color: #C68646;
+    color: #020205;
+}
+.PaginaContacto .Formulario{
+    width: 100%;
+    height: 66px;
+    background: #020205;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los elementos del formulario */
+    margin-top: 50px; /* Espacio superior para separar del título */
+    padding: 50px; 
+}
+.contacto{
+    overflow: visible;
+}
